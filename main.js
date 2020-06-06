@@ -8,7 +8,7 @@ app.get("/atcoder", async function (req, res) {
   res.status(200);
   res.header({ "Content-Type": "application/json" });
   let result;
-  await fetch(`https://atcoder.jp/users/define`)
+  await fetch(`https://atcoder.jp/users/${req.query.username}`)
     .then((response) => {
       return response.text();
     })
