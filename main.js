@@ -27,6 +27,18 @@ app.get("/atcoder", async function (req, res) {
         )[1].children[0].children[3].children[1].innerHTML,
       };
     });
+  await fetch(`https://atcoder.jp/users/${req.query.username}/history`)
+    .then((response) => {
+      return response.text();
+    })
+    .then((text) => {
+      const dom = new JSDOM(text);
+      result = {
+        ...result,
+        participatedContests:
+          dom.window.document.querySelectorAll(".text-center").length - 7,
+      };
+    });
   res.json(result);
   res.end();
 });
