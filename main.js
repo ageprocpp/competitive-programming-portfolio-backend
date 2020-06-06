@@ -20,6 +20,8 @@ app.get("/atcoder", async function (req, res) {
       result = {
         rating: dom.window.document.querySelectorAll(".dl-table")[1].children[0]
           .children[1].children[1].children[0].innerHTML,
+        ratingRank: dom.window.document.querySelectorAll(".dl-table")[1]
+          .children[0].children[0].children[1].innerHTML,
       };
     });
   res.json(result);
