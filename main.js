@@ -23,6 +23,6 @@ app.get("/atcoder", async function (req, res) {
   res.end();
 });
 
-app.listen(3000);
+app.listen(env.process.PORT || 3000);
 
 console.log("Server is listening");
