@@ -6,7 +6,10 @@ const { JSDOM } = jsdom;
 
 app.get("/atcoder", async function (req, res) {
   res.status(200);
-  res.header({ "Content-Type": "application/json" });
+  res.header({
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+  });
   let result;
   await fetch(`https://atcoder.jp/users/${req.query.username}`)
     .then((response) => {
