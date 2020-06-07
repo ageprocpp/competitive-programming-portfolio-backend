@@ -56,7 +56,6 @@ app.get("/atcoder", async function (req, res) {
             return response.text()
         })
         .then(text => {
-            console.log(text)
             if (text.match(/This user has not competed yet./)) {
                 result = {
                     ...result,
