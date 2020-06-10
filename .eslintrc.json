@@ -24,6 +24,49 @@
         "semi": [
             "error",
             "never"
+        ],
+        "comma-spacing": [
+            2,
+            {
+            "before": false,
+            "after": true
+            }
+        ],
+        "space-infix-ops": [
+            "error",
+            {
+                "int32Hint": false
+            }
+        ],
+        "space-unary-ops": [
+            2
+        ],
+        "arrow-spacing": [
+            2,
+            {
+                "before": true,
+                "after": true
+            }
+        ],
+        "object-curly-newline": [
+            "error",
+            {
+                "ObjectExpression": "always",
+                "ObjectPattern": { "multiline": true },
+                "ImportDeclaration": "never",
+                "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+            }
+        ],
+        "arrow-body-style": [
+            "error",
+            "as-needed"
+        ],
+        "multiline-ternary": [
+            "error",
+            "always-multiline"
+        ],
+        "key-spacing": [
+            "error"
         ]
     }
 }
