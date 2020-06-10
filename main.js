@@ -6,15 +6,14 @@ const { JSDOM } = jsdom
 
 app.use(function(req, res, next){
 	console.log(req.originalUrl)
-	next()
-})
-
-app.get("/atcoder", async function (req, res) {
-	console.log(req.originalUrl)
 	res.header({
 		"Content-Type": "application/json",
 		"Access-Control-Allow-Origin": "*",
 	})
+	next()
+})
+
+app.get("/atcoder", async function (req, res) {
 	let result
 	let responseSended = false
 	await fetch(`https://atcoder.jp/users/${req.query.username}`)
